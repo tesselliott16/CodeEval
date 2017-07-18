@@ -13,7 +13,7 @@ namespace LongestWordProblem
         {
             static void Main(string[] args)
             {
-                string f = "LongestWordFile.txt";
+                string f = @"C:\_Projects\CodeEval\CodeEval\LongestWordProblem\LongestWordFile.txt";
                 var list = new List<string>();
                 var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
                 using (var reader = new StreamReader(fileStream, Encoding.UTF8))
@@ -21,14 +21,22 @@ namespace LongestWordProblem
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
+                        string longestLength = string.Empty;
                         string[] result = line.Split(' ');
-                        var longestLength = new List<string>();
                         for (int i = 0; i < result.Length; i++)
                         {
-                            longestLength.Add(StringLength(result[i], result[i+1])); 
+                            if (i == 0)
+                            {
+                                longestLength = result[i];
+                            }
+                            if (i > 0)
+                            {
+                                longestLength = StringLength(longestLength, result[i]);
+                            }
                         }
-
                         Console.WriteLine(longestLength);
+
+
                     }
                     Console.ReadLine();
                 }
@@ -36,7 +44,17 @@ namespace LongestWordProblem
 
             static string StringLength(string x, string y)
             {
-                return x.Length > y.Length ? x : y;
+                int xLength = x.Length;
+                int yLength = y.Length;
+                if (xLength == yLength)
+                {
+                    return x;
+                }
+                else
+                {
+                    return x.Length > y.Length ? x : y;
+                }
+                
             }
         }
     }
