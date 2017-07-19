@@ -1,0 +1,5 @@
+﻿Hello World,r
+Hello CodeEval,E
+The mysterious diary records the voice,v
+She works two jobs to make ends meet,j
+The river stole the gods,t

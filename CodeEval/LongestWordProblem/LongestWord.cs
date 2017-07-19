@@ -11,7 +11,7 @@ namespace LongestWordProblem
     {
         static void Main(string[] args)
         {
-            string f = @"C:\_Projects\CodeEval\CodeEval\LongestWordProblem\LongestWordFile.txt";
+            string f = "LongestWordFile.txt";
             var list = new List<string>();
             var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
             using (var reader = new StreamReader(fileStream, Encoding.UTF8))
@@ -33,13 +33,10 @@ namespace LongestWordProblem
                         }
                     }
                     Console.WriteLine(longestLength);
-
-
                 }
-                Console.ReadLine();
             }
+            Console.ReadLine();
         }
-
         static string StringLength(string x, string y)
         {
             int xLength = x.Length;
@@ -52,8 +49,6 @@ namespace LongestWordProblem
             {
                 return x.Length > y.Length ? x : y;
             }
-                
         }
-        
     }
 }
