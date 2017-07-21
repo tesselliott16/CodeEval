@@ -21,8 +21,7 @@ namespace JSONMenuIds
                 string line;
                 while ((line = r.ReadLine()) != null)
                 {
-                    var json = line;
-                    var menu = JsonConvert.DeserializeObject<RootObject>(json);
+                    var menu = JsonConvert.DeserializeObject<RootObject>(line);
                     var total = 0;
                     foreach (var item in menu.Menu.Items)
                     {
