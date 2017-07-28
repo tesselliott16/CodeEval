@@ -10,8 +10,8 @@ namespace HiddenDigits
         public static void CreateFile(int numberOfStrings)
         {
             string line = string.Empty;
-            int stringLength = random.Next(5, 15);
-            FileName.GeneratedFilePath = @"C:\_Projects\CodeEval\CodeEval\HiddenDigits\GeneratedText\GeneratedText" + stringLength + ".txt";
+            
+            FileName.GeneratedFilePath = @"C:\_Projects\CodeEval\CodeEval\HiddenDigits\GeneratedText\GeneratedText" + numberOfStrings + ".txt";
             if (!File.Exists(FileName.GeneratedFilePath))
             {
                 File.Create(FileName.GeneratedFilePath).Dispose();
@@ -19,6 +19,7 @@ namespace HiddenDigits
                 {
                     for (int i = 0; i < numberOfStrings; i++)
                     {
+                        int stringLength = random.Next(5, 15);
                         line = RandomString(stringLength);
                         file.WriteLine(line);
                     }
@@ -31,6 +32,7 @@ namespace HiddenDigits
                 {
                     for (int i = 0; i < numberOfStrings; i++)
                     {
+                        int stringLength = random.Next(5, 15);
                         line = RandomString(stringLength);
                         file.WriteLine(line);
                     }

@@ -9,7 +9,7 @@ namespace HiddenDigits
     {
         static void Main(string[] args)
         {
-            GenerateRandomString.CreateFile(50);
+            GenerateRandomString.CreateFile(30000);
             string f = GenerateRandomString.FileName.GeneratedFilePath;
             var list = new List<string>();
             var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
