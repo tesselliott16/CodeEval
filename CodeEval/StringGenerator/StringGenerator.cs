@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 
@@ -13,7 +14,7 @@ namespace StringGenerator
         public static void CreateFile(int numberOfStrings, string charType, int maxLength)
         {
             string line = string.Empty;
-            FileName.GeneratedFilePath = @"C:\_Projects\CodeEval\CodeEval\HiddenDigits\GeneratedText\GeneratedText" + numberOfStrings + ".txt";
+            FileName.GeneratedFilePath = @"C:\_Projects\CodeEval\CodeEval\GeneratedText\GeneratedText" + numberOfStrings + FileName.DateTime.ToString("Mmddyyhmmss") + ".txt";
             if (!File.Exists(FileName.GeneratedFilePath))
             {
                 File.Create(FileName.GeneratedFilePath).Dispose();
@@ -21,7 +22,7 @@ namespace StringGenerator
                 {
                     for (int i = 0; i < numberOfStrings; i++)
                     {
-                        int stringLength = random.Next(5, maxLength);
+                        int stringLength = random.Next(3, maxLength);
                         line = RandomString(stringLength, charType);
                         file.WriteLine(line);
                     }
@@ -34,7 +35,7 @@ namespace StringGenerator
                 {
                     for (int i = 0; i < numberOfStrings; i++)
                     {
-                        int stringLength = random.Next(5, maxLength);
+                        int stringLength = random.Next(3, maxLength);
                         line = RandomString(stringLength, charType);
                         file.WriteLine(line);
                     }
@@ -50,6 +51,7 @@ namespace StringGenerator
         public static class FileName
         {
             public static string GeneratedFilePath { get; set; }
+            public static DateTime DateTime { get; set; } = DateTime.Today;
         }
 
         public static class GenerateType

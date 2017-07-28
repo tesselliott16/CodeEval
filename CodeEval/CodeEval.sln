@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvenNumbers", "EvenNumbers\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringGenerator", "StringGenerator\StringGenerator.csproj", "{0B5ECF29-345A-4B52-98A8-C0FC551494E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfIntegers", "SumOfIntegers\SumOfIntegers.csproj", "{2C2347DE-4BD5-459F-A157-EE7AD2B06657}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{0B5ECF29-345A-4B52-98A8-C0FC551494E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B5ECF29-345A-4B52-98A8-C0FC551494E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B5ECF29-345A-4B52-98A8-C0FC551494E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C2347DE-4BD5-459F-A157-EE7AD2B06657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C2347DE-4BD5-459F-A157-EE7AD2B06657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C2347DE-4BD5-459F-A157-EE7AD2B06657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C2347DE-4BD5-459F-A157-EE7AD2B06657}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
