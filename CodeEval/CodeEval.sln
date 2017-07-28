@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RightmostChar", "RightmostC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiddenDigits", "HiddenDigits\HiddenDigits.csproj", "{6F4131D6-E0E5-4326-B3A7-8203DFB3A399}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwapCase", "SwapCase\SwapCase.csproj", "{4745B76C-4088-4237-AF4F-0911F5129C74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{6F4131D6-E0E5-4326-B3A7-8203DFB3A399}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F4131D6-E0E5-4326-B3A7-8203DFB3A399}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F4131D6-E0E5-4326-B3A7-8203DFB3A399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4745B76C-4088-4237-AF4F-0911F5129C74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4745B76C-4088-4237-AF4F-0911F5129C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4745B76C-4088-4237-AF4F-0911F5129C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4745B76C-4088-4237-AF4F-0911F5129C74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
