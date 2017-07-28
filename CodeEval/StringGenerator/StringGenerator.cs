@@ -2,15 +2,17 @@
 using System.IO;
 using System.Linq;
 
-namespace HiddenDigits
+namespace StringGenerator
 {
-    class GenerateRandomString
+    public class GenerateRandomString
     {
+        static void Main()
+        {
+        }
         public static Random random = new Random();
-        public static void CreateFile(int numberOfStrings)
+        public static void CreateFile(int numberOfStrings, string charType, int maxLength)
         {
             string line = string.Empty;
-            
             FileName.GeneratedFilePath = @"C:\_Projects\CodeEval\CodeEval\HiddenDigits\GeneratedText\GeneratedText" + numberOfStrings + ".txt";
             if (!File.Exists(FileName.GeneratedFilePath))
             {
@@ -19,8 +21,8 @@ namespace HiddenDigits
                 {
                     for (int i = 0; i < numberOfStrings; i++)
                     {
-                        int stringLength = random.Next(5, 15);
-                        line = RandomString(stringLength);
+                        int stringLength = random.Next(5, maxLength);
+                        line = RandomString(stringLength, charType);
                         file.WriteLine(line);
                     }
                 }
@@ -32,16 +34,15 @@ namespace HiddenDigits
                 {
                     for (int i = 0; i < numberOfStrings; i++)
                     {
-                        int stringLength = random.Next(5, 15);
-                        line = RandomString(stringLength);
+                        int stringLength = random.Next(5, maxLength);
+                        line = RandomString(stringLength, charType);
                         file.WriteLine(line);
                     }
                 }
             }
         }
-        public static string RandomString(int length)
+        public static string RandomString(int length, string chars)
         {
-            const string chars = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789[]{};':,./<>?!@#define$%^&*()\|=+`~";
             return new string(Enumerable.Repeat(chars, length)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
@@ -49,6 +50,15 @@ namespace HiddenDigits
         public static class FileName
         {
             public static string GeneratedFilePath { get; set; }
+        }
+
+        public static class GenerateType
+        {
+            public static string AllKeys = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789[]{};':,./<>?!@#define$%^&*()\|=+`~";
+            public static string Numbers = "0123456789";
+            public static string Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            public static string Lower = "abcdefghijklmnopqrstuvwxyz";
+            public static string Upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         }
     }
 }

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6F4131D6-E0E5-4326-B3A7-8203DFB3A399}</ProjectGuid>
+    <ProjectGuid>{7784F2B0-9500-48EA-85E2-ABA7C0D74D5F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HiddenDigits</RootNamespace>
-    <AssemblyName>HiddenDigits</AssemblyName>
+    <RootNamespace>EvenNumbers</RootNamespace>
+    <AssemblyName>EvenNumbers</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,14 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HiddenDigits.cs" />
+    <Compile Include="EvenNumbersProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HiddenDigitsFile.txt">
+    <Content Include="EvenNumberFile.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

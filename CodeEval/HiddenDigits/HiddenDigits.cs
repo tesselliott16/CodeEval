@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using StringGenerator;
 
 namespace HiddenDigits
 {
@@ -9,7 +10,7 @@ namespace HiddenDigits
     {
         static void Main(string[] args)
         {
-            GenerateRandomString.CreateFile(30000);
+            GenerateRandomString.CreateFile(30000, GenerateRandomString.GenerateType.AllKeys, 20);
             string f = GenerateRandomString.FileName.GeneratedFilePath;
             var list = new List<string>();
             var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
