@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CabernetOrChardonnay", "Cab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadMore", "ReadMore\ReadMore.csproj", "{9BC69B1C-6DBD-4C69-ABF6-25DE9F02F93E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigDigits", "BigDigits\BigDigits.csproj", "{4024F092-9478-4123-91BF-29A7FED6A943}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{9BC69B1C-6DBD-4C69-ABF6-25DE9F02F93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BC69B1C-6DBD-4C69-ABF6-25DE9F02F93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BC69B1C-6DBD-4C69-ABF6-25DE9F02F93E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4024F092-9478-4123-91BF-29A7FED6A943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4024F092-9478-4123-91BF-29A7FED6A943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4024F092-9478-4123-91BF-29A7FED6A943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4024F092-9478-4123-91BF-29A7FED6A943}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

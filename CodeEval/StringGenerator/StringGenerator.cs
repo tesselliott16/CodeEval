@@ -61,6 +61,7 @@ namespace StringGenerator
             public static string Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
             public static string Lower = "abcdefghijklmnopqrstuvwxyz";
             public static string Upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            public static string Numeric = "0123456789.";
         }
     }
 }
