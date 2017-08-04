@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixedContent", "MixedConten
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompressedSequence", "CompressedSequence\CompressedSequence.csproj", "{6F18AA21-2B30-4FE9-B0B4-69CDDEC403F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PenultimateWord", "PenultimateWord\PenultimateWord.csproj", "{531C750E-93EA-4170-A89C-431986938DDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{6F18AA21-2B30-4FE9-B0B4-69CDDEC403F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F18AA21-2B30-4FE9-B0B4-69CDDEC403F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F18AA21-2B30-4FE9-B0B4-69CDDEC403F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{531C750E-93EA-4170-A89C-431986938DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{531C750E-93EA-4170-A89C-431986938DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{531C750E-93EA-4170-A89C-431986938DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{531C750E-93EA-4170-A89C-431986938DDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
