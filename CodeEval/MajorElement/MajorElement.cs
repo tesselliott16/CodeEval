@@ -11,7 +11,6 @@ namespace MajorElement
     {
         static void Main(string[] args)
         {
-
             string f = "MajorElementsFile.txt";
             var list = new List<string>();
             var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);

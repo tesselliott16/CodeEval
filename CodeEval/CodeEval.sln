@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigDigits", "BigDigits\BigD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MajorElement", "MajorElement\MajorElement.csproj", "{C83D0036-EB52-4D39-9EA4-90A9DCFCA386}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixedContent", "MixedContent\MixedContent.csproj", "{C13005B2-4FB6-40C4-9000-1475629E9270}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{C83D0036-EB52-4D39-9EA4-90A9DCFCA386}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C83D0036-EB52-4D39-9EA4-90A9DCFCA386}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C83D0036-EB52-4D39-9EA4-90A9DCFCA386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C13005B2-4FB6-40C4-9000-1475629E9270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C13005B2-4FB6-40C4-9000-1475629E9270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C13005B2-4FB6-40C4-9000-1475629E9270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C13005B2-4FB6-40C4-9000-1475629E9270}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
