@@ -43,6 +43,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PenultimateWord", "Penultim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSize", "FileSize\FileSize.csproj", "{C220A74C-E2AC-4D22-8DA3-A3899C39519E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveCharacters", "RemoveCharacters\RemoveCharacters.csproj", "{9A99F16E-00F2-4528-B53C-CF0CE3833E05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailValidation", "EmailValidation\EmailValidation.csproj", "{D2A35ED7-0010-45F2-8D50-D603FAF786C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +133,14 @@ Global
 		{C220A74C-E2AC-4D22-8DA3-A3899C39519E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C220A74C-E2AC-4D22-8DA3-A3899C39519E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C220A74C-E2AC-4D22-8DA3-A3899C39519E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A99F16E-00F2-4528-B53C-CF0CE3833E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A99F16E-00F2-4528-B53C-CF0CE3833E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A99F16E-00F2-4528-B53C-CF0CE3833E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A99F16E-00F2-4528-B53C-CF0CE3833E05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2A35ED7-0010-45F2-8D50-D603FAF786C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A35ED7-0010-45F2-8D50-D603FAF786C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A35ED7-0010-45F2-8D50-D603FAF786C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A35ED7-0010-45F2-8D50-D603FAF786C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
