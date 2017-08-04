@@ -12,7 +12,7 @@ namespace BigDigits
     {
         static void Main(string[] args)
         {
-            GenerateRandomString.CreateFile(10, GenerateRandomString.GenerateType.Numeric, 20);
+            GenerateRandomString.CreateFile(1000, GenerateRandomString.GenerateType.Numeric, 5);
             string f = GenerateRandomString.FileName.GeneratedFilePath;
             StringBuilder builder = new StringBuilder();
             var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
@@ -21,7 +21,8 @@ namespace BigDigits
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    string[] bigDigits;
+                    string[] bigDigits = {string.Empty};
+                    string[] printLine = {string.Empty};
                     char[] preParse = line.ToCharArray();
                     foreach (char digit in preParse)
                     {
@@ -30,12 +31,17 @@ namespace BigDigits
                             int digitInt = Convert.ToInt32(char.GetNumericValue(digit));
                             bigDigits = ConvertToBigDigits(digitInt);
                         }
+                        Array.Resize(ref printLine, bigDigits.Length);
+                        for (int i = 0; i < bigDigits.Length; i++)
+                        {
+                            printLine[i] += String.Join(printLine[i], bigDigits[i]);
+                        }
                     }
-                    for (int i = 0; i < bigDigits.Length / 2; i++)
+                    for (int i = 0; i < printLine.Length; i++)
                     {
-                        builder.Append(bigDigits[i], bigDigits[i+6]);
+                        Console.WriteLine(printLine[i]);
                     }
-                    Console.WriteLine(builder.ToString());
+                   
                 }
             }
             Console.ReadLine();
@@ -64,7 +70,7 @@ namespace BigDigits
             }
             if (digit == 4)
             {
-                string[] number = { "--*--", "-*--*", "-****", "----*", "----*", "-----" };
+                string[] number = { "-*---", "*--*-", "****-", "---*-", "---*-", "-----" };
                 return number;
             }
             if (digit == 5)
@@ -74,7 +80,7 @@ namespace BigDigits
             }
             if (digit == 6)
             {
-                string[] number = { "--**-", "-***-", "-*--*", "*--*-", "--**-", "-----" };
+                string[] number = { "--**-", "-*---", "-***-", "-*--*", "--**-", "-----" };
                 return number;
             }
             if (digit == 7)
@@ -89,9 +95,10 @@ namespace BigDigits
             }
             if (digit == 9)
             {
-                string[] number = { "--**-", "-*--*", "--***", "----*", "--**-", "-----" };
+                string[] number = {"--**-", "-*--*", "--***", "----*", "--**-", "-----"};
                 return number;
             }
+            else return null;
         }
     }
 
