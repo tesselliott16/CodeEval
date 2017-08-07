@@ -22,7 +22,6 @@ namespace CompressedSequence
                     int count;
                     List<int> numbersAll = new List<int>();
                     List<int> numbers = new List<int>();
-                    string isMajor = String.Empty;
                     string[] stringNumbers = line.Split(' ');
                     foreach (var number in stringNumbers)
                     {

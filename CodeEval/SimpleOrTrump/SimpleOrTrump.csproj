@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4024F092-9478-4123-91BF-29A7FED6A943}</ProjectGuid>
+    <ProjectGuid>{59079440-E3B8-49B8-80E3-E8413F7C3CB7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BigDigits</RootNamespace>
-    <AssemblyName>BigDigits</AssemblyName>
+    <RootNamespace>SimpleOrTrump</RootNamespace>
+    <AssemblyName>SimpleOrTrump</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,21 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BigDigitsConverter.cs" />
+    <Compile Include="SimpleOrTrump.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FileSize\FileSize.csproj">
-      <Project>{c220a74c-e2ac-4d22-8da3-a3899c39519e}</Project>
-      <Name>FileSize</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\StringGenerator\StringGenerator.csproj">
-      <Project>{0b5ecf29-345a-4b52-98a8-c0fc551494e4}</Project>
-      <Name>StringGenerator</Name>
-    </ProjectReference>
+    <Content Include="SimpleOrTrumpFile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

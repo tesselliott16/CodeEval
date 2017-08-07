@@ -13,10 +13,9 @@ namespace BigDigits
         static void Main(string[] args)
         {
             GenerateRandomString.CreateFile(1000, GenerateRandomString.GenerateType.Numeric, 5);
-            string f = GenerateRandomString.FileName.GeneratedFilePath;
             StringBuilder builder = new StringBuilder();
-            var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
-            using (var reader = new StreamReader(fileStream, Encoding.UTF8))
+            StreamReader reader = new StreamReader(GenerateRandomString.FileName.GeneratedFilePath);
+            using (FileSize.FileReader.FileReaderInit(GenerateRandomString.FileName.GeneratedFilePath))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
