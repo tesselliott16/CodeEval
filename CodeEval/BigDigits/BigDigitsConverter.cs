@@ -33,7 +33,7 @@ namespace BigDigits
                         Array.Resize(ref printLine, bigDigits.Length);
                         for (int i = 0; i < bigDigits.Length; i++)
                         {
-                            printLine[i] += String.Join(printLine[i], bigDigits[i]);
+                            printLine[i] += string.Join(printLine[i], bigDigits[i]);
                         }
                     }
                     for (int i = 0; i < printLine.Length; i++)
