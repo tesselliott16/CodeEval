@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
+//https://www.codeeval.com/open_challenges/211/
+//Find the requirements for the project below at the above link
 
 namespace CabernetOrChardonnay
 {
@@ -11,44 +12,46 @@ namespace CabernetOrChardonnay
     {
         static void Main(string[] args)
         {
+            //read the file in the project that contains the wine types and the remembered characters
             string f = "CabernetOrChardonnayFile.txt";
-            StringBuilder builder = new StringBuilder();
-            var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
-            using (var reader = new StreamReader(fileStream, Encoding.UTF8))
+            var builder = new StringBuilder();
+            var list = FileSize.FileReader.FileReaderInit(f);
+            foreach (var line in list)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                //split the words from the remembered characters
+                var result = line.Split('|');
+                //save the remembered charcters to a char array
+                var toFind = result[1].Trim().ToCharArray();
+                //split the words into seperate strings and save in a string array
+                var words = result[0].Trim().Split(' ');
+                var exist = new List<bool>();
+                //for each word in the string array of words
+                foreach (var word in words)
                 {
-                    string[] result = line.Split('|');
-                    char[] toFind = result[1].Trim().ToCharArray();
-                    string[] words = result[0].Trim().Split(' ');
-                    List<bool> exist = new List<bool>();
-                    foreach (string word in words)
+                    //for each letter in the character array of remembered characters
+                    exist.AddRange(toFind.Select(letter => word.IndexOf(letter) != -1));
+                    //if there is a false in the list, clear the list and move on to the next word
+                    if (exist.Any(c => c == false))
                     {
-                        foreach (char letter in toFind)
-                        { 
-                            bool letterExists = word.IndexOf(letter) != -1;
-                            exist.Add(letterExists);
-                        }
-                        if (exist.Any(c => c == false))
-                        {
-                            exist.Clear();
-                            continue;
-                        }
-                        builder.Append(word).Append(" ");
+                        exist.Clear();
+                        continue;
                     }
-                    if (builder.Length == 0)
-                    {
-                        Console.WriteLine("False");
-                    }
-                    else
-                    {
-                        Console.WriteLine(builder.ToString());
-                        builder.Clear();
-                    }
+                    //if all of the letters exist in the word, add the word to the list to print and move on to the next word
+                    builder.Append(word).Append(" ");
                 }
-                Console.ReadLine();
+                //if there are no words that contain the required letters, print false
+                if (builder.Length == 0)
+                {
+                    Console.WriteLine("False");
+                }
+                //print the words that contain the required letters
+                else
+                {
+                    Console.WriteLine(builder.ToString());
+                    builder.Clear();
+                }
             }
+            Console.ReadLine();
         }
     }
 }

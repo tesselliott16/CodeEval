@@ -1,20 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace FileSize
 {
     public class FileReader
     {
-        public static System.IDisposable FileReaderInit(string pathName)
+        public static List<string> FileReaderInit(string pathName)
         {
-            string f = pathName;
-            var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
-            var reader = new StreamReader(fileStream, Encoding.UTF8);
-            return reader;
+            var list = new List<string>();
+            list.Clear();
+            var fileStream = new FileStream(pathName, FileMode.Open, FileAccess.Read);
+            using (var reader = new StreamReader(fileStream, Encoding.UTF8))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    list.Add(line); 
+                    Console.WriteLine(list);
+                }
+            }
+            return list;
         }
     }
 }

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+//https://www.codeeval.com/open_challenges/92/
+//To find the requirements for this project, visit the above link.
 
 namespace PenultimateWord
 {
@@ -11,17 +9,15 @@ namespace PenultimateWord
     {
         static void Main(string[] args)
         {
-            string f = "PenultimateWordFile.txt";
-            var list = new List<string>();
-            var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
-            using (var reader = new StreamReader(fileStream, Encoding.UTF8))
+            //read the file, containing lists of words on single lines
+            var f = "PenultimateWordFile.txt";
+            var list = FileSize.FileReader.FileReaderInit(f);
+            foreach (var line in list)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    string[] words = line.Split(' ');
-                    Console.WriteLine(words[words.Length - 2]);
-                }
+                //split the words into an array on the space
+                var words = line.Split(' ');
+                //print the word in the second to last
+                Console.WriteLine(words[words.Length - 2]);
             }
             Console.ReadLine();
         }

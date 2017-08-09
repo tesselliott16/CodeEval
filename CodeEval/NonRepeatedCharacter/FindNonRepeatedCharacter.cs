@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+//https://www.codeeval.com/open_challenges/12/
+//To find the requirements for this project, visit the above link
 
 namespace NonRepeatedCharacter
 {
@@ -11,31 +11,29 @@ namespace NonRepeatedCharacter
     {
         static void Main(string[] args)
         {
-            string f = "WordsListFile.txt";
-            var list = new List<string>();
-            StringBuilder builder = new StringBuilder();
-            var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
-            using (var reader = new StreamReader(fileStream, Encoding.UTF8))
+            //read a list of words on individual lines
+            var f = "WordsListFile.txt";
+            var list = FileSize.FileReader.FileReaderInit(f);
+            foreach (var line in list)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                //read the word into a list
+                var lettersAll = line.ToList();
+                var distinctLetters = new List<char>();
+                //find all of the distinct letters in the word
+                var letters = lettersAll.Distinct().ToList();
+                //find out how many times a letter occurs in the list
+                foreach (var letter in letters)
                 {
-                    int count;
-                    List<char> lettersAll = line.ToList();
-                    List<char> letters = new List<char>();
-                    List<char> distinctLetters = new List<char>();
-                    letters = lettersAll.Distinct().ToList();
-                    foreach (char letter in letters)
+                    var count = lettersAll.Count(x => x == letter);
+                    //if the letter occurs only once, add it to distinct letters list and stop looking, we want the first
+                    if (count == 1)
                     {
-                        count = lettersAll.Count(x => x == letter);
-                        if (count == 1)
-                        {
-                            distinctLetters.Add(letter);
-                            break;
-                        }
+                        distinctLetters.Add(letter);
+                        break;
                     }
-                    Console.WriteLine(distinctLetters[0].ToString());
                 }
+                //print the distinct letter
+                Console.WriteLine(distinctLetters[0].ToString());
             }
             Console.ReadLine();
         }

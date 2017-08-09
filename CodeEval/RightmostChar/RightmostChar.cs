@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+//https://www.codeeval.com/open_challenges/31/
+//To find the requirements for this project, visit the link above.
 
 namespace RightmostChar
 {
@@ -11,19 +9,19 @@ namespace RightmostChar
     {
         static void Main(string[] args)
         {
+            //read the file, a list of sentences with a comma seperated letter to be found
             string f = "RightmostCharFile.txt";
-            var list = new List<string>();
-            var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
-            using (var reader = new StreamReader(fileStream, Encoding.UTF8))
+            var list = FileSize.FileReader.FileReaderInit(f);
+            foreach (var line in list)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    string[] result = line.Split(',');
-                    char[] designate = result[1].ToCharArray();
-                    int index = result[0].IndexOf(designate[0]);
-                    Console.WriteLine(index);
-                }
+                //split the line into the sentence and the letter
+                string[] result = line.Split(',');
+                //find the letter to be indexed
+                char[] designate = result[1].ToCharArray();
+                //find the index of the letter
+                int index = result[0].IndexOf(designate[0]);
+                //print the index
+                Console.WriteLine(index);
             }
             Console.ReadLine();
         }

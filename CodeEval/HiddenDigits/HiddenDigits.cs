@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
 using StringGenerator;
+using static System.Char;
+
+//https://www.codeeval.com/open_challenges/122/
+//Visit the above link to find the requirements for this project
 
 namespace HiddenDigits
 {
@@ -10,45 +13,47 @@ namespace HiddenDigits
     {
         static void Main(string[] args)
         {
+            //generate a file with 30,000 random strings containing up to 20 random keystrokes from the keyboard
             GenerateRandomString.CreateFile(30000, GenerateRandomString.GenerateType.AllKeys, 20);
             string f = GenerateRandomString.FileName.GeneratedFilePath;
-            var list = new List<string>();
-            var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
-            using (var reader = new StreamReader(fileStream, Encoding.UTF8))
+            var list = FileSize.FileReader.FileReaderInit(f);
+            foreach (var line in list)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                //the below list of characters should be converted into their index if the character is found in the string
+                var hiddenList = new List<char>() { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' };
+                var hiddenDigits = new List<int>();
+                var designate = line.ToCharArray();
+                //go through each character in line
+                foreach (var letter in designate)
                 {
-                    List<char> hiddenList = new List<char>() {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'};
-                    List<int> hiddenDigits = new List<int>();
-                    char[] designate = line.ToCharArray();
-                    foreach (char letter in designate)
+                    //if the character is in the list of hidden characters, add the index of the characters
+                    if (hiddenList.Contains(letter))
                     {
-                        if (char.IsLower(letter) && hiddenList.Contains(letter))
-                        {
-                            hiddenDigits.Add(hiddenList.IndexOf(letter));
-                        }
-                        if (char.IsDigit(letter))
-                        {;
-                            hiddenDigits.Add(Convert.ToInt32(char.GetNumericValue(letter)));
-                        }
+                        hiddenDigits.Add(hiddenList.IndexOf(letter));
                     }
-                    if (hiddenDigits.Count == 0)
+                    //if the character is a digit, leave the character where it is
+                    if (IsDigit(letter))
                     {
-                        Console.WriteLine("NULL");
+                        hiddenDigits.Add(Convert.ToInt32(GetNumericValue(letter)));
                     }
-                    else
+                }
+                //if there were no hiddenDigits or numbers, print NULL
+                if (hiddenDigits.Count == 0)
+                {
+                    Console.WriteLine("NULL");
+                }
+                //otherwise, print the string of numbers generated from the existing numbers and hidden digits
+                else
+                {
+                    var builder = new StringBuilder();
+                    foreach (var digit in hiddenDigits)
                     {
-                        StringBuilder builder = new StringBuilder();
-                        foreach (int digit in hiddenDigits)
-                        {
-                            builder.Append(digit).Append("");
-                        }
-                        Console.WriteLine(builder.ToString());
+                        builder.Append(digit).Append("");
                     }
+                    Console.WriteLine(builder.ToString());
                 }
             }
             Console.ReadLine();
-        }
+        } 
     }
 }

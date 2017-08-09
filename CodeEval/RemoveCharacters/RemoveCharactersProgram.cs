@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+//https://www.codeeval.com/open_challenges/13/
+//To find the requirements for this project, visit the link above.
 
 namespace RemoveCharacters
 {
@@ -11,29 +10,29 @@ namespace RemoveCharacters
     {
         static void Main(string[] args)
         {
+            //read the file, which contains a sentence, then a set of characters to be removed seperated by a comma
             string f = "RemoveCharactersFile.txt";
-            var list = new List<string>();
-            var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
-            using (var reader = new StreamReader(fileStream, Encoding.UTF8))
+            var list = FileSize.FileReader.FileReaderInit(f);
+            foreach (var line in list)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                //seperate the sentence from the characters to remove
+                string[] result = line.Split(',');
+                //turn the characters to be removed to a char array
+                char[] foundLetters = result[1].Trim().ToCharArray();
+                //turn the sentence into a char array
+                var sentence = result[0].ToList();
+                //for each letter in the removal list, remove the letter from the sentence array
+                foreach (var letter in foundLetters)
                 {
-                    string[] result = line.Split(',');
-                    char[] foundLetters = result[1].Trim().ToCharArray();
-                    char[] sentenceLetters = result[0].ToCharArray();
-                    var sentence = result[0].ToList();
-                    foreach (var letter in sentenceLetters)
+                    if (sentence.Contains(letter))
                     {
-                        if (foundLetters.Contains(letter))
-                        {
-                            sentence.Remove(letter);
-                        }
+                        sentence.Remove(letter);
                     }
-                    Console.WriteLine(string.Join("",sentence));
                 }
-                Console.ReadLine();
+                //put the sentence back together
+                Console.WriteLine(string.Join("", sentence));
             }
+                Console.ReadLine();
         }
     }
 }

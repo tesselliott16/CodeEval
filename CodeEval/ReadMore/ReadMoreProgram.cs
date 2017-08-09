@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+//https://www.codeeval.com/open_challenges/167/
+//To find the requirements for this project, visit the link above.
 
 namespace ReadMore
 {
@@ -11,42 +11,42 @@ namespace ReadMore
     {
         static void Main(string[] args)
         {
+            //read a file with lists of sentences
             string f = "ReadMoreFile.txt";
-            var list = new List<string>();
-            var fileStream = new FileStream(f, FileMode.Open, FileAccess.Read);
-            using (var reader = new StreamReader(fileStream, Encoding.UTF8))
+            var list = FileSize.FileReader.FileReaderInit(f);
+            foreach (var line in list)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                var foundIndexes = new List<int>();
+                //turn the sentence into a char array
+                char[] lineArray = line.ToCharArray();
+                if (line.Length > 55)
                 {
-                    var foundIndexes = new List<int>();
-                    char[] lineArray = line.ToCharArray();
-                    if (line.Length > 55)
+                    for (int i = 0; i < lineArray.Length; i++)
                     {
-                        for (int i = 0; i < lineArray.Length; i++)
+                        //find and save the indexes of all of the spaces in the list
+                        if (lineArray[i] == ' ')
                         {
-                            if (lineArray[i] == ' ')
-                            {
-                                foundIndexes.Add(i);
-                            }
+                            foundIndexes.Add(i);
                         }
-                        var trimIndexes = new List<int>();
-                        for (int i = 0; i < foundIndexes.Count; i++)
-                        {
-                            if (foundIndexes[i] < 40)
-                            {
-                                trimIndexes.Add(foundIndexes[i]);
-                            }
-                        }
-                        int length = trimIndexes.Count;
-                        string result = string.Concat(line.Take(40));
-                        int cutPoint = trimIndexes[length - 1];
-                        string finalTrim = string.Concat(result.Take(cutPoint));
-                        Console.WriteLine(finalTrim + ". . . <Read More>");
-                        continue;
                     }
-                    Console.WriteLine(line);
+                    //trim the list of indexes of spaces to only go up to 40, since we are chopping the list to 40 char
+                    var trimIndexes = new List<int>();
+                    for (int i = 0; i < foundIndexes.Count; i++)
+                    {
+                        if (foundIndexes[i] < 40)
+                        {
+                            trimIndexes.Add(foundIndexes[i]);
+                        }
+                    }
+                    int length = trimIndexes.Count;
+                    //find the spot where the space lives to cut to it
+                    int cutPoint = trimIndexes[length - 1];
+                    //trim the string to the final space
+                    string finalTrim = string.Concat(line.Take(cutPoint));
+                    //add the read more tag to the end of the sentence when printing
+                    Console.WriteLine(finalTrim + ". . . <Read More>");
                 }
+                Console.WriteLine(line);
             }
             Console.ReadLine();
         }

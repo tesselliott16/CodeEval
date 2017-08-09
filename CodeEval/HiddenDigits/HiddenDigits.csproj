@@ -55,6 +55,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FileSize\FileSize.csproj">
+      <Project>{c220a74c-e2ac-4d22-8da3-a3899c39519e}</Project>
+      <Name>FileSize</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StringGenerator\StringGenerator.csproj">
       <Project>{0b5ecf29-345a-4b52-98a8-c0fc551494e4}</Project>
       <Name>StringGenerator</Name>

@@ -1,7 +1,10 @@
 ﻿using System;
-using System.Globalization;
 using System.IO;
 using System.Linq;
+
+//this project spawned from the desire for more testing cases and a variety of data for other projects within this solution
+//please see the comments below for understanding
+//this file is a reference to the following related projects;
 
 namespace StringGenerator
 {
@@ -14,7 +17,7 @@ namespace StringGenerator
         public static void CreateFile(int numberOfStrings, string charType, int maxLength)
         {
             string line = string.Empty;
-            FileName.GeneratedFilePath = @"C:\_Projects\CodeEval\CodeEval\GeneratedText\GeneratedText" + numberOfStrings + FileName.DateTime.ToString("Mmddyyhmmss") + ".txt";
+            FileName.GeneratedFilePath = @"C:\_Projects\CodeEval\CodeEval\GeneratedText\" + numberOfStrings + FileName.DateTime.ToString("Mmddyyhmmss") + ".txt";
             if (!File.Exists(FileName.GeneratedFilePath))
             {
                 File.Create(FileName.GeneratedFilePath).Dispose();
@@ -51,7 +54,7 @@ namespace StringGenerator
         public static class FileName
         {
             public static string GeneratedFilePath { get; set; }
-            public static DateTime DateTime { get; set; } = DateTime.Today;
+            public static DateTime DateTime { get; set; } = DateTime.UtcNow;
         }
 
         public static class GenerateType
